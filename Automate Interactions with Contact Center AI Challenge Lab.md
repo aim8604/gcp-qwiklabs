@@ -44,7 +44,7 @@ gcloud pubsub topics create ${TOPIC}
 
 ```yaml
 gsutil mb -l ${PROJECT} gs://${PROJECT}/
-mkdir DFaudio
+mkdir ${DATAFLOW}
 ```
 
 ### Task - 6 : Deploy a Cloud Dataflow Pipeline :-
@@ -92,11 +92,13 @@ select * from [DATASET].transcripts
 Run the following query in the BigQury query editor :-
 
 ```yaml
-select * from (SELECT entities.name,entities.type, COUNT(entities.name) AS count FROM [DATASET].transcripts, UNNEST(entities) entities GROUP BY entities.name, entities.type ORDER BY count ASC ) Where count > 5
+select * from (SELECT entities.name,entities.type, COUNT(entities.name) AS count 
+FROM [DATASET].transcripts, UNNEST(entities) entities 
+GROUP BY entities.name, entities.type ORDER BY count ASC ) Where count > 5
 ```
 
-Click Save table to Bigquery, give a name. 
-Go to the new table, click EXPORT > SCAN WITH DLP and start job.
+Click Save table to Bigquery, give a name.   
+Go to the new table, click EXPORT > SCAN WITH DLP and start job.  
 Wait til the job completed (3-5min)
 
-Congratulations!
+Congratulations! :beer: :beer:
