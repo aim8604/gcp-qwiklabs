@@ -1,4 +1,4 @@
-### Automate Interactions with Contact Center AI: Challenge Lab :-
+## Automate Interactions with Contact Center AI: Challenge Lab :-
 
 ### Set up env parameters and download the necessary files :-
 
